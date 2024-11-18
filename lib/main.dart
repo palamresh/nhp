@@ -28,7 +28,7 @@ void main() async {
         create: (context) => FavouriteProvider(),
       ),
       ChangeNotifierProvider(
-        create: (context) => ThemeProvider(),
+        create: (context) => ThemeProvider()..loadTheme(),
       ),
     ],
     child: MyApp(),
