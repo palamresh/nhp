@@ -42,6 +42,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final provider = Provider.of<ThemeProvider>(context);
+    if (provider.loading) {
+      return MaterialApp(
+        home: Scaffold(
+          body: Center(
+            child: Text("Loading...."),
+          ),
+        ),
+      );
+    }
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
@@ -55,7 +65,7 @@ class MyApp extends StatelessWidget {
       themeMode: provider.isDarkMode ? ThemeMode.dark : ThemeMode.light,
       //  home: SplashScreen(),
 
-      home: ChangeTheme(),
+      home: SplashScreen(),
     );
   }
 }
