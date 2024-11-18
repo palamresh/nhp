@@ -15,6 +15,7 @@ class ChangeThemeState extends State<ChangeTheme> {
     final provider = Provider.of<ThemeProvider>(context);
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.blue,
         title: Text("Change Theme"),
       ),
       body: Column(

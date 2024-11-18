@@ -11,6 +11,7 @@ import 'details.dart';
 import 'flutter_clipboard/flutter_clibboard.dart';
 import 'login_screen.dart/first.dart';
 import 'login_screen.dart/steak_track_page.dart';
+import 'pro/screen/change_theme.dart';
 import 'pro/screen/counter_screen.dart';
 import 'pro/screen/favourite_item_screen.dart';
 
@@ -44,7 +45,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      darkTheme: ThemeData.dark(),
+      darkTheme: ThemeData.dark(
+        useMaterial3: true,
+      ),
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
@@ -52,7 +55,7 @@ class MyApp extends StatelessWidget {
       themeMode: provider.isDarkMode ? ThemeMode.dark : ThemeMode.light,
       //  home: SplashScreen(),
 
-      home: FavouriteItemScreen(),
+      home: ChangeTheme(),
     );
   }
 }
