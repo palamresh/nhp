@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:nhp/model/customer.dart';
 import 'package:nhp/pro/counter.dart';
 import 'package:nhp/pro/favourite_provider.dart';
+import 'package:nhp/pro/screen/task_provider.dart';
 import 'package:nhp/pro/theme_provider.dart';
 import 'package:nhp/splash_screen.dart';
 import 'package:provider/provider.dart';
@@ -26,6 +27,9 @@ void main() async {
       ),
       ChangeNotifierProvider(
         create: (context) => FavouriteProvider(),
+      ),
+      ChangeNotifierProvider(
+        create: (context) => TaskProvider()..loadTask(),
       ),
       ChangeNotifierProvider(
         create: (context) => ThemeProvider()..loadTheme(),
@@ -55,10 +59,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      darkTheme: ThemeData.dark(
-        useMaterial3: true,
-      ),
+      darkTheme: ThemeData(
+          appBarTheme: AppBarTheme(backgroundColor: Colors.green),
+          brightness: Brightness.dark),
       theme: ThemeData(
+        appBarTheme: AppBarTheme(backgroundColor: Colors.blue),
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),

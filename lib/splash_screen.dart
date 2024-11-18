@@ -26,8 +26,12 @@ class SplashScreenState extends State<SplashScreen> {
 
   void checkLogin() async {
     Timer(Duration(seconds: 3), () {
-      Navigator.push(
-          context, MaterialPageRoute(builder: (context) => ChangeTheme()));
+      Navigator.pushAndRemoveUntil(
+          context,
+          MaterialPageRoute(
+            builder: (context) => ChangeTheme(),
+          ),
+          (routes) => false);
     });
     // SharedPreferences sp = await SharedPreferences.getInstance();
 
