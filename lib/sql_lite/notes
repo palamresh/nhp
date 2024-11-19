@@ -1,0 +1,37 @@
+class NotesModel {
+  final int? id;
+  final String title;
+  final String email;
+  final String description;
+  final int age;
+
+  NotesModel({
+    this.id,
+    required this.title,
+    required this.email,
+    required this.description,
+    required this.age,
+  });
+
+  // Factory constructor for creating a NotesModel instance from a map
+  factory NotesModel.fromMap(Map<String, dynamic> res) {
+    return NotesModel(
+      id: res['id'] as int?,
+      title: res['title'] as String,
+      email: res['email'] as String,
+      description: res['description'] as String,
+      age: res['age'] as int,
+    );
+  }
+
+  // Method to convert NotesModel instance to a map
+  Map<String, Object?> toMap() {
+    return {
+      'id': id,
+      'title': title,
+      'email': email,
+      'description': description,
+      'age': age,
+    };
+  }
+}

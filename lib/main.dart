@@ -15,6 +15,7 @@ import 'login_screen.dart/steak_track_page.dart';
 import 'pro/screen/change_theme.dart';
 import 'pro/screen/counter_screen.dart';
 import 'pro/screen/favourite_item_screen.dart';
+import 'sql_lite/sql_home_notes.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -70,7 +71,7 @@ class MyApp extends StatelessWidget {
       themeMode: provider.isDarkMode ? ThemeMode.dark : ThemeMode.light,
       //  home: SplashScreen(),
 
-      home: SplashScreen(),
+      home: SqlHomeNotes(),
     );
   }
 }
