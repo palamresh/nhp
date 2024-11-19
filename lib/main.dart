@@ -1,4 +1,8 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:nhp/json_learn/first_json.dart';
+import 'package:nhp/json_learn/json_screen.dart';
 import 'package:nhp/model/customer.dart';
 import 'package:nhp/pro/counter.dart';
 import 'package:nhp/pro/favourite_provider.dart';
@@ -19,8 +23,10 @@ import 'sql_lite/sql_home_notes.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // var counter = CounterProvider();
-  // await counter.loadCounter();
+  FirstJson data = FirstJson(1, "Suraj");
+  String jsonUser = jsonEncode(data);
+  print(jsonUser);
+
   runApp(MultiProvider(
     providers: [
       ChangeNotifierProvider(
@@ -71,7 +77,7 @@ class MyApp extends StatelessWidget {
       themeMode: provider.isDarkMode ? ThemeMode.dark : ThemeMode.light,
       //  home: SplashScreen(),
 
-      home: SqlHomeNotes(),
+      home: JsonScreen(),
     );
   }
 }

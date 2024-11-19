@@ -2,5 +2,9 @@ class FirstJson {
   final int id;
   final String name;
 
-  FirstJson({required this.id, required this.name});
+  FirstJson(this.id, this.name);
+
+  Map toJson() {
+    return {"id": id, "name": name};
+  }
 }
