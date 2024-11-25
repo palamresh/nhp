@@ -1,31 +1,18 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:nhp/json_learn/first_json.dart';
+
 import 'package:nhp/json_learn/json_screen.dart';
-import 'package:nhp/model/customer.dart';
+
 import 'package:nhp/pro/counter.dart';
 import 'package:nhp/pro/favourite_provider.dart';
 import 'package:nhp/pro/screen/task_provider.dart';
 import 'package:nhp/pro/theme_provider.dart';
-import 'package:nhp/splash_screen.dart';
-import 'package:provider/provider.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
-import 'details.dart';
-import 'flutter_clipboard/flutter_clibboard.dart';
-import 'login_screen.dart/first.dart';
-import 'login_screen.dart/steak_track_page.dart';
-import 'pro/screen/change_theme.dart';
-import 'pro/screen/counter_screen.dart';
-import 'pro/screen/favourite_item_screen.dart';
-import 'sql_lite/sql_home_notes.dart';
+import 'package:provider/provider.dart';
+
+import 'new_sql_db/add_sql.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  FirstJson data = FirstJson(1, "Suraj");
-  String jsonUser = jsonEncode(data);
-  print(jsonUser);
 
   runApp(MultiProvider(
     providers: [
@@ -77,7 +64,7 @@ class MyApp extends StatelessWidget {
       themeMode: provider.isDarkMode ? ThemeMode.dark : ThemeMode.light,
       //  home: SplashScreen(),
 
-      home: JsonScreen(),
+      home: AddSql(),
     );
   }
 }

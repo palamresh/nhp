@@ -1,7 +1,5 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class FirstScreen extends StatefulWidget {
   const FirstScreen({super.key});
@@ -11,8 +9,10 @@ class FirstScreen extends StatefulWidget {
 }
 
 class _FirstScreenState extends State<FirstScreen> {
+  // ignore: unused_field
   PageController _controller = PageController();
 
+  // ignore: prefer_final_fields, unused_field
   int _currentPage = 0;
   @override
   void initState() {

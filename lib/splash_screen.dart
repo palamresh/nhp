@@ -1,11 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:nhp/my_home_page.dart';
 import 'package:nhp/pro/screen/change_theme.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-
-import 'login.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});

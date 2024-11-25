@@ -10,7 +10,7 @@ class NotesModel {
     required this.title,
     required this.email,
     required this.description,
-    required this.age,
+    required this.age
   });
 
   // Factory constructor for creating a NotesModel instance from a map
@@ -21,6 +21,7 @@ class NotesModel {
       email: res['email'] as String,
       description: res['description'] as String,
       age: res['age'] as int,
+
     );
   }
 
